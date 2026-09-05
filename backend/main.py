@@ -27,6 +27,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://fakejobdetectionnn.netlify.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -153,15 +154,12 @@ def analyze_job(request: JobRequest):
             "risk_level": result["risk_level"],
             "threshold": result["threshold"],
 
-            # Clean user-facing signals
             "model_signals": signals["model_signals"],
             "counter_signals": signals["counter_signals"],
 
-            # Raw model evidence retained for debugging
             "fraud_evidence": result["fraud_evidence"],
             "legitimate_evidence": result["legitimate_evidence"],
 
-            # AI explanation
             "explanation": explanation
         }
 
