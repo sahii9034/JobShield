@@ -13,3 +13,5 @@ frontend/dist/
 .ipynb_checkpoints/
 
 *.log
+
+data/DataSet.csv
